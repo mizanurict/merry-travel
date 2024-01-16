@@ -269,6 +269,33 @@ ul {
   background: rgba(233, 68, 68, 0.05);
 }
 
+/* simple perfect place  */
+.simple-place{
+  max-width: 1250px;
+  margin: 30px auto;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+}
+.simple-place-container{
+  width: 50%;
+  line-height: 25px;
+  padding: 10px;
+}
+
+.simple-title{
+  font-size: 32px;
+  margin-top: 20px;
+}
+.simple-video{
+  width: 50%;
+  margin-top: 20px;
+}
+.simple-video video{
+  border-radius: 10px;
+}
+
 /* news latter section style  */
 .newslatter {
   max-width: 1250px;
@@ -478,6 +505,18 @@ footer {
   }
   .card-two {
     margin: 10px auto;
+  }
+  .simple-place{
+    flex-direction: column;
+  }
+  .simple-place-container{
+    width: 90%;
+  }
+  .simple-place-container button{
+    margin-left: 15px;
+  }
+  .simple-video{
+    width: 90%;
   }
   .newslatter {
     flex-direction: column;
