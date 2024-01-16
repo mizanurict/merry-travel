@@ -6,33 +6,51 @@
 body {
   font-family: "Mulish", sans-serif;
 }
-.header-nav{
+.header-nav {
   max-width: 1250px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin: 0 auto;
 }
-.nav-tag{
+.nav-tag {
   align-items: center;
   display: flex;
   gap: 10px;
   font-size: 30px;
 }
-.nav-title .travel-color{
+.nav-title .travel-color {
   color: #ff5400;
 }
-.nav-menu{
+.nav-menu {
   display: flex;
   gap: 30px;
   list-style: none;
-  
+  position: relative;
 }
-.nav-menu a{
+.open-menu,
+.close-menu {
+  position: absolute;
+  cursor: pointer;
+  display: none; 
+}
+.open-menu {
+  top: 10%;
+  right: 50px;
+  transform: translateY(-60%);
+}
+.close-menu {
+  top: 1px;
+  right: 0;
+}
+#check{
+  display: none;
+}
+.nav-menu a {
   text-decoration: none;
   color: #424247;
 }
-.nav-menu .home a{
+.nav-menu .home a {
   color: #ff5400;
 }
 
@@ -152,10 +170,10 @@ ul {
   gap: 10px;
   margin: 3rem auto;
 }
-.destination-image .div{
+.destination-image .div {
   position: relative;
 }
-.image-center{
+.image-center {
   position: absolute;
   color: #fff;
   left: 45%;
@@ -187,30 +205,30 @@ ul {
   height: 100%;
 }
 /* popular-food section */
-.popular-food{
+.popular-food {
   max-width: 1250px;
   margin: 0 auto;
   text-align: center;
 }
-.food-menu{
+.food-menu {
   display: flex;
   gap: 20px;
 }
-.food{
- background: #ebebf0;
- border-radius: 10px;
- padding: 20px;
- width: 30%;
+.food {
+  background: #ebebf0;
+  border-radius: 10px;
+  padding: 20px;
+  width: 30%;
 }
-.food h4{
+.food h4 {
   font-size: 25px;
   color: #ff5400;
 }
-.food p span{
+.food p span {
   color: #ff5400;
   font-weight: 700;
 }
-.food-menu img{
+.food-menu img {
   border-radius: 10px;
 }
 
@@ -232,7 +250,7 @@ ul {
 .common-card {
   border-radius: 16px;
   border: 1px solid rgba(251, 181, 99, 0.2);
-  
+
   padding: 20px;
 }
 .p {
@@ -323,49 +341,77 @@ hr {
   border: none;
 }
 /* footer section style  */
-footer{
+footer {
   background: rgba(19, 19, 24, 0.05);
   height: 70vh;
 }
-.footer{
+.footer {
   width: 70%;
   display: block;
   text-align: center;
   margin: 0 auto;
 }
-.footer-title{
+.footer-title {
   text-align: center;
   align-items: center;
   font-weight: 800px;
   font-size: 45px;
   padding-top: 6rem;
 }
-.footer-title .travel-color{
+.footer-title .travel-color {
   color: #ff5400;
 }
-.footer-para{
+.footer-para {
   margin: 30px auto;
-  color: #5A5A5D;
+  color: #5a5a5d;
 }
-.icon-container{
+.icon-container {
   display: flex;
   gap: 20px;
   align-items: center;
   justify-content: center;
 }
-.hr{
+.hr {
   margin: 40px auto;
 }
 
 /* responsive for tablet device  */
-@media screen and (min-width:600px) and (max-width:992px) {
-  body{
-    display: none;
-  }
+@media screen and (min-width: 600px) and (max-width: 992px) {
 }
 
 /* responsive for mobile device  */
 @media screen and (max-width: 600px) {
+ 
+  .nav-menu {
+    flex-direction: column;
+    position: fixed;
+    top: 54px;
+    right: -100%;
+    align-items: center;
+    justify-content: center;
+    width: 35%;
+    background-color: rgb(224, 228, 230);
+    transition: all .2s ease-in-out;
+  }
+  .nav-menu li {
+    margin-top: 10px;
+  }
+  .nav-menu li a{
+    padding: 10px;
+  }
+  .open-menu{
+    right: 15px;
+  }
+  .close-menu{
+    left: 5px;
+    top: 2px;
+  }
+  .open-menu, .close-menu{
+    display: block;
+  }
+  #check:checked ~ .nav-menu {
+    right:15px;
+  }
   .header-banner {
     background-repeat: no-repeat;
     background-size: cover;
@@ -453,34 +499,28 @@ footer{
   .newslatter-subscriber {
     width: 76%;
   }
-  .nli{
+  .nli {
     width: 13rem;
     right: 3px;
     top: 16.3rem;
   }
-  .footer{
+  .footer {
     width: 85%;
   }
-  .footer-title{
-    padding-top:3rem ;
+  .footer-title {
+    padding-top: 3rem;
   }
-  .header-nav{
-    flex-direction: column;
-  }
-  .nav-menu{
-    flex-direction: column;
-  }
-  .image-center{
+ 
+  .image-center {
     position: absolute;
     color: #fff;
     left: 40%;
     top: 45%;
   }
-  .food-menu{
+  .food-menu {
     flex-direction: column;
-    
   }
-  .food{
+  .food {
     width: 80%;
     margin: 0 auto;
   }
